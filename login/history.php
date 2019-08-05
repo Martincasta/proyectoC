@@ -18,6 +18,7 @@
 
   <!-- Custom styles for this template-->
   <link href="../css/smaths.css" rel="stylesheet">
+   <link rel="stylesheet" href="../css/socialmedia.css">  
 
 </head>
 

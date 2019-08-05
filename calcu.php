@@ -27,10 +27,10 @@
      <?php include("navbar.php"); ?>
 
       <div id="content">
-        <div class="container-fluid justify-content" align="center" style="height:300%;">
+        <div class="container-fluid justify-content flex-grow-1" align="center" style="height:300%;">
         <form name="myform" action="" method="post">
         <input type="text" class="form-control form-control-user" name="display">
-        <hr><p align="center" style ="width: 100%; height: 300%; font-size: 26px; float:center;">
+        <hr><p align="center" class="flex-grow-1" style ="width: 100%; height: 300%; font-size: 26px; float:center;">
     <input type="button" class="calc-btn btn btn-outline-danger" name="btn-del" value="DEL" onclick="del()">
     <input type="button" class="calc-btn btn btn-outline-danger" name="btn-ac" value="AC" onclick="ac()">
     <input type="button" class="calc-btn btn btn-outline-danger" name="btn-plus" value="+" onclick="myclick('+')">

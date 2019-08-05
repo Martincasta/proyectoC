@@ -1,4 +1,6 @@
-<?php session_start();?>
+<?php
+session_start();
+?>
 <div id="wrapper">
 
     <ul class="navbar-nav sidebar bg-gradient-danger sidebar-dark accordion" id="accordionSidebar">

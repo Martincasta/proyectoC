@@ -38,6 +38,13 @@
 			$_SESSION['idusuarios']	= $row['idusuarios'];
 			$_SESSION['userid'] = $row['userid'];
 			$_SESSION['mail'] = $row['mail'];
+			$_SESSION['fn'] = $row['firstname'];
+			$_SESSION['ln'] = $row['lastname'];
+
+
+
+
+
 			header("Location:../index.php?login=success");
 			exit();
 			}

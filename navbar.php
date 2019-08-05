@@ -1,5 +1,5 @@
     <?php include "login/dbh.inc.php" ?>
-        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+        <nav class="navbar navbar-expand navbar-light bg-gradient-warning topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
           <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
@@ -13,16 +13,8 @@
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                  <?php 
-                  $sql= "SELECT * FROM usuarios";
-                  $result= mysqli_query($conn,$sql);
-                  $resultcheck = mysqli_num_rows($result);
-
-                    if($resultcheck > 0){
-                     if(isset($_SESSION['mail'])) {
-                      while ($row = mysqli_fetch_assoc($result)) {
-                     echo $row['firstname'] . " " . $row['lastname'];   }}}?> 
+                <span class="mr-2 d-none d-flex text-white small">
+                  <?php echo $_SESSION['fn'] . " " . $_SESSION['ln'] ?> 
 
                </span>
                 <img class="img-profile rounded-circle" src="https://picsum.photos/200/300">
@@ -41,7 +33,7 @@
 
         </nav>
 
-        <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -53,15 +45,18 @@
         <div class="modal-body">Toca salir si querés terminar tu sesión, o quedate resolviendo ecuaciones un ratito más.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">:)</button>
-          <a class="btn btn-warning" href="../calculadora/login/login.php">Salir</a>
+          <button class="btn btn-warning"><a  href="../calculadora/login/login.php">Salir</a></button>
+<?php 
 
-          <?php
-   session_unset();
-  session_destroy();
+  if (isset($_POST['logout'])) {
 
-  ?>
+      session_destroy();
+      session_unset();
 
+      header("Location: /login/login.php");
+  }
 
+ ?>
   
         </div>
       </div>

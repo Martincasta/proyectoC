@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+  include("dbh.inc.php"); 
 
+ ?>
 <head>
 
   <meta charset="utf-8">
@@ -17,17 +20,18 @@
 
   <!-- Custom styles for this template-->
   <link href="../css/smaths.css" rel="stylesheet">
+  <link rel="stylesheet" href="../css/socialmedia.css">
+  <link rel="stylesheet" href="../css/perfil.css"> 
 
 </head>
 
 <body id="page-top">
 
   <!-- Page Wrapper -->
-  <div id="wrapper">
+  <div id="wrapper flex-grow-1">
 
  <?php
-
-    include("../../calculadora/sidebar.php")
+    include("../../calculadora/sidebar.php");
   ?>
     <!-- End of Sidebar -->
 
@@ -47,43 +51,72 @@
         <div class="container-fluid">
 
           <!-- Content Row -->
-          <div class="row">
+          <div class="row d-flex justify-content-start">
 
             <!-- First Column -->
             <div class="col-lg-4">
 
-              <?php
-                require_once('dbh.inc.php');
-                $id=$_SESSION['mail'];
-                $qry = mysqli_query("SELECT * FROM idusuarios where mem_id='$id'");
-                while($row3 = mysqli_fetch_array($qry))
-                { 
-                $fname=$row3['fname'];
-                $lname=$row3['lname'];
-                $contact=$row3['contact'];
-                $picture=$row3['picture'];
-                }
-                ?>
-              <table width="398" border="0" align="center" cellpadding="0">
-                <tr>
-                    <td height="26" colspan="2">Your Profile Information </td>
-                    <td><div align="right"><a href="index.php">logout</a></div></td>
-                 </tr>
-                <tr>
-                    <td width="129" rowspan="5"><img src="<?php echo $picture ?>" width="129" height="129" alt="no image found"/></td>
-                    <td width="82" valign="top"><div align="left">FirstName:</div></td>
-                    <td width="165" valign="top"><?php echo $fname ?></td>
-                </tr>
-                <tr>
-                    <td valign="top"><div align="left">LastName:</div></td>
-                    <td valign="top"><?php echo $lname ?></td>
-                </tr>
-                <tr>
-                    <td valign="top"><div align="left">Contact No.: </div></td>
-                    <td valign="top"><?php echo $contact ?></td>
-                </tr>
-              </table>
-            <p align="center"><a href="index.php"></a></p>
+             <div class="container emp-profile">
+            <form method="post">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="profile-img d-flex d-flex justify-content-between">                              
+                      <form method="post" enctype="multipart/form-data" action="profiles.inc.php">
+                      <input type="file" name="prof_img" class="btn-file btn btn-default btn-outline-danger" size="35">
+                      <input type="submit" value="Subir" name="img" class="btn btn-outline-warning">
+                          
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="col-md-6">
+                        <div class="profile-head ">
+                                    <h5>
+                                        <?php echo $_SESSION['userid'] ?>
+                                    </h5>
+                                    <h6>
+                                       Perfil 
+                                    </h6><hr>
+                          </div>
+                    </div>
+                </div>
+                      <div class="col-md-8">
+                        <div class="tab-content profile-tab" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Id de Usuario</label>
+                                            </div><hr>
+                                            <div class="col-md-6">
+                                                <p><?php echo $_SESSION['idusuarios'] ?> </p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>Nombre</label>
+                                            </div><hr>
+                                            <div class="col-md-6">
+                                                <p><?php echo $_SESSION['fn'] . " " . $_SESSION['ln'] ?></p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label>E-mail</label>
+                                            </div><hr>
+                                            <div class="col-md-6">
+                                                <p><?php echo $_SESSION['mail'] ?></p>
+                                            </div>
+                                        </div> <hr>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>           
+        </div>
+
+           </form>
+              
         </div>
 
         </div>

@@ -1,4 +1,5 @@
-<?php include("sidebar.php");?>
+<?php  include("sidebar.php");?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +33,8 @@
 
         <?php
 
+
+
         include("navbar.php")
 
         ?>
@@ -41,7 +44,7 @@
 
           <!-- Page Heading -->
           <div class="d-sm-flex align-items-center justify-content-between mb-4">
-            <p align="middle"><h1 class="h3 mb-0 text-gray-800"> Simple <sup>Maths</sup></h1></p>
+            <p align="middle"><h1 class="h3 mb-0 bg-warning text-white d-table rounded"> Simple <sup class="bg-danger text-white rounded-left">Maths</sup></h1></p>
           </div>
 
           <!-- Content Row -->
@@ -49,7 +52,7 @@
           <div class="row">
 
             <!-- Area Chart -->
-            <div class="col-xl-8 col-lg-7">
+            <div class="col-xl-8 col-lg-7 d-flex justify-content-around">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -61,14 +64,14 @@
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="chart-area">
-                  <h2 class="m-0 text-secondary">Simple <sup>Maths</sup> empezó como una idea, hacer una calculadora cientifica que grafique y guarde historial de lo que se hacía en ella pero que no fuera un codigo innecesariamente largo, como la gran mayoría de las que actualmente existen. Tras un mes de trabajo y muchas horas de aprendizaje, esto es lo que logramos.</h2>
+                  <h2 class="m-0 text-secondary">Simple <sup>Maths</sup> es una calculadora cientifica que grafica y guarda historial e informacion de usuario pero no es un codigo innecesariamente largo, como la gran mayoría de las que actualmente existen, usando una sola funcion para todo lo que la calculadora hace.</h2>
                   </div>
                 </div>
               </div>
             </div>
 
             <!-- Pie Chart -->
-            <div class="col-xl-4 col-lg-5">
+            <div class="col-xl-4 col-lg-5 d-flex justify-content-around">
               <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
