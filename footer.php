@@ -7,7 +7,7 @@
                   <ul class="social-network social-circle">
                     <li><a href="https://facebook.com" class="icoFacebook social" title="Facebook"><i class="fa fa-facebook"></i></a></li>
                     <li><a href="https://twitter.com" class="icoTwitter social" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                    <li><a href="https://linkedin.com" class="icoLinkedin social" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/martin-casta/" class="icoLinkedin social" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
                     <li><a href="https://" class="icoRss social" title="Rss"><i class="fa fa-rss"></i></a></li>
                   </ul>
                 </div>

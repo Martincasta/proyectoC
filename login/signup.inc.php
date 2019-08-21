@@ -71,15 +71,19 @@
 		    else {
 		      $hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 
+
 		    mysqli_stmt_bind_param($stmt, "sssss", $username, $fn, $ln, $hashedPwd, $mail);
 		    mysqli_stmt_execute($stmt);
+		    mysqli_query($conn, $sqlHist);
 		    header("Location:../login/login.php?register=success");
 		    exit(); 
 
+
+	        }
 	        }
 	      }
-	    }
-	  }
+	      }
+
 	  mysqli_stmt_close($stmt);
 	  mysqli_close($conn);
 	}

@@ -50,19 +50,24 @@
                     <?php
                       include "dbh.inc.php";
 
-                      if (isset($_POST['registrar'])) {
+                      if (isset($_POST['Actualizar'])) {
                       
                       $conexion = getConexion();
-
-                      $sql= "SELECT * FROM usuarios WHERE mail = '" . $_POST["mail"] . "'";
+                      $newpassword = $_POST['newpwd'];
+                      $confirmnewpassword = $_POST['confirmpwd'];
+                      $mail = $_POST['mail'];
+                      $sql= "SELECT * FROM usuarios WHERE mail = '" . "$mail" . "'";
 
                       $resultado = $conexion->query ($consulta);
 
-                      if ($resultado->num_rows == 1) {
+                    if($newpassword=$confirmnewpassword){
+                    $sql=mysql_query("UPDATE usuarios SET pwd='$newpassword' where mail='$mail'");
 
-                          }
-                        }
-                                           ?>
+                      }
+                      }
+
+                      ?>
+
                     <div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
                               aria-hidden="true">
                               <div class="modal-dialog modal-notify modal-warning" role="document">
@@ -81,14 +86,14 @@
 
                                     <div class="md-form mb-5">
                                   
-                                    <input type="password" id="form3" class="form-control validate">
-                                    <label data-error="wrong" data-success="right" for="form3">Repeti la contraseña</label>
+                                    <input type="password" id="form3" class="form-control validate" name="newpwd">
+                                    <label data-error="wrong" data-success="right" for="form3">Pone tu contraseña nueva</label>
                                   </div>
 
                                     <div class="md-form">
                                    
-                                      <input type="password" id="form1" class="form-control validate ">
-                                      <label data-error="wrong" data-success="right" for="form2">Pone tu contraseña nueva</label>
+                                      <input type="password" id="form1" class="form-control validate " name="confirmpwd">
+                                      <label data-error="wrong" data-success="right" for="form2"> Repeti la contraseña</label>
                                     </div>
                                   </div>
 
@@ -96,6 +101,7 @@
 
                                   <!--Footer-->
                                   <div class="modal-footer justify-content-center">
+                                    <input type="submit" value="Update Password" name="Actualizar">
                                     <a class="btn btn-default btn-outline-warning waves-effect btn-outline-danger" href="login.php">Volver al login <i class="fas fa-file-import-o ml-1"></i></a>
                                   </div>
                                 </div>

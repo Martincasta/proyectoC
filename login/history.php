@@ -47,6 +47,7 @@
           <!-- Page Heading -->
           <h1 class="h3 mb-1 text-gray-800">Historial</h1>
           <p class="mb-4"></p>
+          <hr>
 
           <!-- Content Row -->
           <div class="row">
@@ -62,7 +63,7 @@
 
               if($resultcheck > 0){
                 while ($row = mysqli_fetch_assoc($result)) {
-                  echo $row['historial'];
+                  echo "<table class='table  table-borderless'>" . "<tr class='table-warning'>" . "<td>" . $_SESSION['mail'] . "</td>" . "<td>" . $row['historial'] . "</td>" . "</tr>" . "</table>";
                 }
 
               }  

@@ -118,7 +118,7 @@
 
 <div id="sidewrapper">
 	<div id="graph_sidebar">
-		<a class="" href="index.php"><h1 style="font-family: Lato, Arial, sans-serif; font-size: 24pt; color: #3d94f6; text-shadow: 1px 1px #FFF ">Simple<sup style="font-family: Lato, Arial, sans-serif;  font-size: 22pt; color: #EE040a; text-shadow: 1px 1px #FFF "> Maths</sup> </h1></a>
+		<a class="" href="index.php"><h1 style="font-family: Lato, Arial, sans-serif; font-size: 24pt; color: #EE040a; text-shadow: 1px 1px #FFF ">Simple<sup style="font-family: Lato, Arial, sans-serif;  font-size: 22pt; color:#11B269; text-shadow: 1px 1px #FFF "> Maths</sup> </h1></a>
 		<span style="font-size: 90%; position: relative; bottom: 4px;"></span><br /><br />
 
 		<div id="graph_inputs">

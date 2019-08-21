@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<?php include "login/dbh.inc.php"; ?>
+<?php   error_reporting(0);
+          include_once "login/dbh.inc.php"; ?>
 
 <head>
 
@@ -30,6 +31,7 @@
         <div class="container-fluid justify-content flex-grow-1" align="center" style="height:300%;">
         <form name="myform" action="" method="post">
         <input type="text" class="form-control form-control-user" name="display">
+        <hr>
         <hr><p align="center" class="flex-grow-1" style ="width: 100%; height: 300%; font-size: 26px; float:center;">
     <input type="button" class="calc-btn btn btn-outline-danger" name="btn-del" value="DEL" onclick="del()">
     <input type="button" class="calc-btn btn btn-outline-danger" name="btn-ac" value="AC" onclick="ac()">
@@ -69,9 +71,30 @@
     <input type="button" class="calc-btn btn btn-outline-info" name="btn-pow" value="a³" onclick="fnpow()">
     <input type="button" class="calc-btn btn btn-outline-info" name="btn-pi" value="π" onclick="fnpi()">
     <input type="button" class="calc-btn btn btn-outline-danger" name="btn-log" value="log" onclick="fnlog()">
+
     <?php
 
+    if (isset($_SESSION['mail'])) {
+      echo "<hr><button type ='submit' name='submit' value='mandar a la base de datos' class='btn btn-outline-success'> Guardar en el historial</button>";
+    }
 
+    if (isset($_SESSION['mail'])) {
+
+      $historial = $_POST['display'];
+
+      $query = "INSERT INTO `historial`(`historial`) VALUES ('$historial')";
+      
+    if(mysqli_query($conn, $query))
+       {
+      echo "<script>alert('Historial Guardado!);</script>";
+      }
+    else
+       {
+       echo "<script>alert('Fallo al subir!');</script>";
+       }
+
+    echo "<br>Todavia no usaste la base de datos?";
+ }
 
     ?>
      </p>

@@ -44,19 +44,9 @@
         </div>
         <div class="modal-body">Toca salir si querés terminar tu sesión, o quedate resolviendo ecuaciones un ratito más.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">:)</button>
-          <button class="btn btn-warning"><a  href="../calculadora/login/login.php">Salir</a></button>
-<?php 
+          <button class="btn btn-warning" type="button" data-dismiss="modal">:)</button>
+          <a href="../calculadora/login/logout.php"><button name="logout" class="btn btn-danger">Salir</button></a>
 
-  if (isset($_POST['logout'])) {
-
-      session_destroy();
-      session_unset();
-
-      header("Location: /login/login.php");
-  }
-
- ?>
   
         </div>
       </div>
